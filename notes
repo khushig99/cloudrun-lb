@@ -1,0 +1,8 @@
+Deploys Cloud Run service (google_cloud_run_service.app).
+Creates a serverless NEG pointing to Cloud Run (google_compute_region_network_endpoint_group.serverless_neg).
+Builds a Backend Service to wrap the NEG (google_compute_backend_service.backend).
+Defines routing with a URL map (google_compute_url_map.url_map).
+Creates an HTTP proxy (google_compute_target_http_proxy.http_proxy).
+Exposes a global HTTP endpoint via a forwarding rule on port 80 (google_compute_global_forwarding_rule.http_rule).
+
+Once applied, you’ll get a global IP for the forwarding rule. Requests to that IP on port 80 will reach your Cloud Run service via the load balancer.

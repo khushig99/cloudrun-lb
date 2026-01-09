@@ -1,4 +1,5 @@
 
+variable "project_id" {} #no default value
 variable "project_id" {
   default = "getteam"
 }
